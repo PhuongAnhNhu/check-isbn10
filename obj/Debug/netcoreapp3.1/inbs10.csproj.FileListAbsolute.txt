@@ -1,0 +1,12 @@
+/Users/phuonganhnhu/Documents/development/C#/inbs10/bin/Debug/netcoreapp3.1/inbs10.deps.json
+/Users/phuonganhnhu/Documents/development/C#/inbs10/bin/Debug/netcoreapp3.1/inbs10.runtimeconfig.json
+/Users/phuonganhnhu/Documents/development/C#/inbs10/bin/Debug/netcoreapp3.1/inbs10.runtimeconfig.dev.json
+/Users/phuonganhnhu/Documents/development/C#/inbs10/bin/Debug/netcoreapp3.1/inbs10.dll
+/Users/phuonganhnhu/Documents/development/C#/inbs10/bin/Debug/netcoreapp3.1/inbs10.pdb
+/Users/phuonganhnhu/Documents/development/C#/inbs10/obj/Debug/netcoreapp3.1/inbs10.csprojAssemblyReference.cache
+/Users/phuonganhnhu/Documents/development/C#/inbs10/obj/Debug/netcoreapp3.1/inbs10.csproj.CoreCompileInputs.cache
+/Users/phuonganhnhu/Documents/development/C#/inbs10/obj/Debug/netcoreapp3.1/inbs10.AssemblyInfoInputs.cache
+/Users/phuonganhnhu/Documents/development/C#/inbs10/obj/Debug/netcoreapp3.1/inbs10.AssemblyInfo.cs
+/Users/phuonganhnhu/Documents/development/C#/inbs10/obj/Debug/netcoreapp3.1/inbs10.dll
+/Users/phuonganhnhu/Documents/development/C#/inbs10/obj/Debug/netcoreapp3.1/inbs10.pdb
+/Users/phuonganhnhu/Documents/development/C#/inbs10/obj/Debug/netcoreapp3.1/inbs10.genruntimeconfig.cache
