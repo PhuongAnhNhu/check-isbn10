@@ -7,38 +7,42 @@ namespace inbs10
         static void Main(string[] args)
         {
 
-            // string code1 = "3-499-13599-X"; // Prüfziffer richtig
-            // string code2 = "3-44619313-8";   // Prüfziffer richtig
-            // string code3 = "0-7475-5100-6";  // Prüfziffer richtig
-            // string code4 = "1-57231-4222";  // Prüfziffer richtig
-            //string code5 = "3 49913 599 X"; // Prüfziffer richtig
-            // string code6 = "1234-56789-0";
-
-
-            PrintIsbn10Result();
+            PrintIsbnResult();
 
         }
 
-        static void PrintIsbn10Result()
-
+        static void PrintIsbnResult()
         {
+            bool shouldContinue = true;
 
-            Console.WriteLine("Geben Sie isbn code ein:");
-            string code = Console.ReadLine();
-            int lengthCode = CheckIsbn(code);
-            if (lengthCode == 10)
+            while (shouldContinue == true)
             {
-                Console.WriteLine("Sie haben isbn10 eingegeben");
-                Console.WriteLine(ValidateIsbn10(code) ? "Prüfziffer richtig" : "Prüfziffer falsch");
-            }
-            else if (lengthCode == 13)
-            {
-                Console.WriteLine("Sie haben isbn13 eingegeben");
-                Console.WriteLine(ValidateIsbn13(code) ? "Prüfziffer richtig" : "Prüfziffer falsch");
-            }
-            else
-            {
-                Console.WriteLine("Prüfziffer falsch");
+                Console.WriteLine("Geben Sie isbn code ein:");
+                string code = Console.ReadLine();
+                int lengthCode = CheckIsbn(code);
+                if (lengthCode == 10)
+                {
+                    Console.WriteLine("Sie haben isbn10 eingegeben");
+                    Console.WriteLine(ValidateIsbn10(code) ? "Prüfziffer richtig" : "Prüfziffer falsch");
+                }
+                else if (lengthCode == 13)
+                {
+                    Console.WriteLine("Sie haben isbn13 eingegeben");
+                    Console.WriteLine(ValidateIsbn13(code) ? "Prüfziffer richtig" : "Prüfziffer falsch");
+                }
+                else
+                {
+                    Console.WriteLine("Prüfziffer falsch");
+                }
+                Console.WriteLine("Nochmal? [ja]: ");
+                if (Console.ReadLine().ToLower() == "nein")
+                {
+                    shouldContinue = false;
+                }
+                else
+                {
+                    shouldContinue = true;
+                }
             }
         }
 
@@ -57,6 +61,7 @@ namespace inbs10
             char[] codeArray = CodeArray(code);
             return codeArray.Length;
         }
+
         static bool ValidateIsbn10(string code)
         {
             char[] codeArray = CodeArray(code);
@@ -79,7 +84,7 @@ namespace inbs10
             }
             else
             {
-                checkNumber = codeArray[9] - '0';
+                checkNumber = codeArray[9] - '0'; // https://stackoverflow.com/a/239107/12432221
             }
             return z10 == checkNumber;
         }
@@ -97,8 +102,9 @@ namespace inbs10
                 {
                     temp1 += (codeArray[i] - '0');
                 }
-                else {
-                    temp2 +=(codeArray[i] - '0')*3;
+                else
+                {
+                    temp2 += (codeArray[i] - '0') * 3;
                 }
             }
             int z13 = (10 - ((temp1 + temp2) % 10)) % 10;
