@@ -62,7 +62,7 @@ namespace inbs10
             char[] codeArray = CodeArray(code);
             int result = 0;
 
-            //Rechen Ziffer 10
+            //Rechnen Ziffer 10
             for (int i = 0; i < 9; i++)
             {
                 result += (codeArray[i] - '0') * (i + 1);
@@ -87,11 +87,21 @@ namespace inbs10
         static bool ValidateIsbn13(string code)
         {
             char[] codeArray = CodeArray(code);
-            int temp1 = (codeArray[0] - '0') + (codeArray[2] - '0') + (codeArray[4] - '0') + (codeArray[6] - '0') + (codeArray[8] - '0') + (codeArray[10] - '0');
 
-            int temp2 = ((codeArray[1] - '0') + (codeArray[3] - '0') + (codeArray[5] - '0') + (codeArray[7] - '0') + (codeArray[9] - '0') + (codeArray[11] - '0')) * 3;
-            int temp = (temp1 + temp2) % 10;
-            int z13 = (10 - temp) % 10;
+            int temp1 = 0;
+            int temp2 = 0;
+
+            for (int i = 0; i < 12; i++)
+            {
+                if ((i % 2) == 0)
+                {
+                    temp1 += (codeArray[i] - '0');
+                }
+                else {
+                    temp2 +=(codeArray[i] - '0')*3;
+                }
+            }
+            int z13 = (10 - ((temp1 + temp2) % 10)) % 10;
 
             if (z13 == (codeArray[12] - '0'))
             {
